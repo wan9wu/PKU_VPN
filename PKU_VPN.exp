@@ -1,0 +1,12 @@
+#!/usr/bin/expect
+
+spawn sudo openconnect --protocol=nc https://vpn.pku.edu.cn
+expect "*password*"
+send "SUDO_PASSWORD\r"
+expect "Enter 'yes'*"
+send "yes\r"
+expect "username:"
+send "USERNAME\r"
+expect "password:"
+send "PASSWORD\r"
+interact
